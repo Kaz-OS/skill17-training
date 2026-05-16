@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 40px;
+}
+
+.converter,
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+textarea {
+  width: 600px;
+  height: 400px;
+}
