@@ -5,6 +5,8 @@ import Header from "./components/header";
 import { api } from "./lib/api";
 // import { api } from "./lib/api";
 
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
 export default function App() {
   const { data = [] } = useQuery({
     queryKey: ["hello"],
@@ -43,12 +45,12 @@ export default function App() {
             contact
           </a>
         </div>
-        <img src="/assets/images/undraw_innovative_b409.svg" alt="" />
+        <img src={assetUrl("assets/images/undraw_innovative_b409.svg")} alt="" />
       </section>
       <section className="grid grid-cols-3 gap-5 mb-50">
         {data?.map((project, index) => (
           <div key={index} className="shadow-md rounded-2xl">
-            <img className="rounded-t-2xl" src={`/assets/images/projects/${project.IMAGE}`} alt="projet" />
+            <img className="rounded-t-2xl" src={assetUrl(`assets/images/projects/${project.IMAGE}`)} alt="projet" />
             <div className="p-3">
               <p>{project.TypeNOM}</p>
               <h3 className="font-bold">{project.ProjetNOM}</h3>
@@ -57,7 +59,7 @@ export default function App() {
         ))}
       </section>
       <section className="flex gap-10">
-        <img className="h-100" src="/assets/images/undraw_Designer_by46.svg" alt="" />
+        <img className="h-100" src={assetUrl("assets/images/undraw_Designer_by46.svg")} alt="" />
         <div className="">
           <h2 className="text-5xl font-bold">À PROPOS...</h2>
           <h3 className="text-6xl font-bold text-[#e0e0e0] mb-10">QUI SUIS-JE ?</h3>
@@ -77,7 +79,7 @@ export default function App() {
       <section className="relative left-1/2 mt-60 w-screen -translate-x-1/2 bg-[#332f30]">
         <img
           className="block h-32 w-full object-cover object-center md:h-48"
-          src="/assets/images/section-back.svg"
+          src={assetUrl("assets/images/section-back.svg")}
           alt="background"
         />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -92,7 +94,7 @@ export default function App() {
       </section>
       <section className="relative z-10 -mt-10">
         <div className="flex flex-col items-center justify-center">
-          <img className="w-30 rounded-full border-4 border-white" src="/assets/images/lena.jpg" alt="" />
+          <img className="w-30 rounded-full border-4 border-white" src={assetUrl("assets/images/lena.jpg")} alt="" />
           <h2>Lena M. Brooks</h2>
           <span>Marketing House</span>
         </div>

@@ -1,3 +1,5 @@
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
 export default function Header() {
   const links = [
     { label: "Projets", href: "#project" },
@@ -9,7 +11,7 @@ export default function Header() {
   return (
     <header className="flex items-center justify-between">
       <div className="flex items-center gap-x-2">
-        <img src="/assets/images/lewis.png" alt="Lawiss" className="rounded-full w-18" />
+        <img src={assetUrl("assets/images/lewis.png")} alt="Lawiss" className="rounded-full w-18" />
         <div className="-space-y-1">
           <h2 className="font-bold">Lewis</h2>
           <h2 className="font-bold">Nathaniel</h2>
